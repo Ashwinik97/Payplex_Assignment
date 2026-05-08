@@ -1,0 +1,21 @@
+Project Approach & Logic:
+
+Frontend (React JS):
+
+State Management: Utilized React useState to handle navigation between Login, Registration, and Dashboard without needing external routing libraries (keeping the build light).
+
+Multipart Form Data: Implemented FormData to handle simultaneous text and file (Profile Photo) uploads via Axios.
+
+Conditional Rendering: Created a "Check Profile" detail view that dynamically fetches and displays the full user record, including the hosted profile image.
+
+Backend (FastAPI/Python):
+
+Static File Serving: Mounted a dedicated /uploads directory using StaticFiles to serve profile photos as live URLs rather than just storing filenames.
+
+RESTful API Design: Used PATCH for status toggling and POST for secure login/registration.
+
+Requirement #5 Logic: Implemented a validation layer in the /login endpoint. If a user’s status is "Inactive," the backend returns a 403 Forbidden error with the specific message: "Account Inactive. Contact Admin."
+
+Data Handling:
+
+Designed the Admin Dashboard to act as the "Source of Truth," allowing the admin to control user access in real-time.
